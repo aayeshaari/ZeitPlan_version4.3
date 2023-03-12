@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ZeitPlan.Views.Student.ViewTable"
+             Title="View Time Table">
+    <ContentPage.Content>
+   
+           
+            <StackLayout Padding="24">
+                <Picker Title="--Select Class" x:Name="ddlClass"/>
+                <Picker Title="--Select Course" x:Name="ddlCourse"/>
+                <Picker Title="--Select Teacher" x:Name="ddlTeacher"/>
+                <Picker Title="--Select Slot" x:Name="ddlSlot"/>
+                <Picker Title="--Select Room" x:Name="ddlRoom"/>
+
+               
+
+                <ActivityIndicator x:Name="LoadingInd" IsRunning="False" />
+                <Button Text="Create" x:Name="btnCreate" Clicked="btnCreate_Clicked"/>
+
+           
+            <ListView x:Name="DataList" ItemTapped="DataList_ItemTapped">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+
+                        <ImageCell Text="{Binding Name}" Detail="{Binding Details}" ImageSource="icon_feed.png"/>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+
+
+        </StackLayout>
+       
+    </ContentPage.Content>
+</ContentPage>

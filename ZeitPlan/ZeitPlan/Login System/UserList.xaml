@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ZeitPlan.LoginSystem.UsersList"
+             Title="Users List"
+             >
+    <ContentPage.Content>
+        <!--<Grid>
+            <MediaElement Source="ms-appx:///bg_video.mp4" Aspect="AspectFill" AutoPlay="True" Volume="0" IsLooping="True" />
+            <StackLayout VerticalOptions="Center">
+                <Label Text="Coffee Ipsum" Style="{StaticResource Title}"/>
+                <Entry x:Name="Username" Placeholder="User name" Keyboard="Email" ReturnType="Next"/>
+                <Entry x:Name="Password" Placeholder="Password" Keyboard="Text" IsPassword="True" ReturnType="Done"/>
+                <Button Text="Sign In"/>
+            </StackLayout>
+        </Grid>-->
+        <StackLayout>
+
+            <ActivityIndicator x:Name="LoadingInd" IsRunning="False" />
+            <ListView x:Name="DataList" ItemTapped="DataList_ItemTapped">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ImageCell Text="{Binding Name}" Detail="{Binding Email}" ImageSource="icon_feed.png"/>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage> 
